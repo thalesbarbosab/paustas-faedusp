@@ -26,4 +26,6 @@ interface RulingInterface
     public function getAllLimit(int $limit) : iterable;
 
     public function getAllCount() : int;
+
+    public function countMoreOneView($id): void;
 }

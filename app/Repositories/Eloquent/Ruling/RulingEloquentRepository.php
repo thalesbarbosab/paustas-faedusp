@@ -57,4 +57,10 @@ class RulingEloquentRepository implements RulingInterface
     {
         return Ruling::all()->count();
     }
+
+    public function countMoreOneView($id): void
+    {
+        $ruling = Ruling::findOrFail($id);
+        $ruling->update(['views'=> $ruling->views += 1]);
+    }
 }

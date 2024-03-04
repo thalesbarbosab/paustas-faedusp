@@ -83,6 +83,11 @@ class RulingService
         return $ruling;
     }
 
+    public function countViews($id): void
+    {
+        $this->ruling_repository->countMoreOneView($id);
+    }
+
     protected function sanitizeRuling(array $ruling_array) : array
     {
         $ruling_array_merged = array_merge($ruling_array,[

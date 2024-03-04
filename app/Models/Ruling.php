@@ -8,7 +8,7 @@ use DateTime;
 
 class Ruling extends Model
 {
-    protected $fillable = ['slug','title','resume','description','publish_date','expiration_date','author'];
+    protected $fillable = ['slug','title','resume','description','publish_date','expiration_date','views','author'];
 
     protected $with = ['pictures'];
 
@@ -35,7 +35,7 @@ class Ruling extends Model
             return null;
         }
         $expiration_date = new DateTime($this->expiration_date);
-        
+
         return $expiration_date->format('d/m/Y');
     }
 

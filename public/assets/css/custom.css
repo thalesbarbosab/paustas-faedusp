@@ -1,0 +1,199 @@
+:root {
+    --color-default: #482b79  !important;
+    --color-primary: #9c9c9c !important;
+    --color-secondary: #52565e !important;
+
+    font-family: "Open Sans";
+
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Open Sans", sans-serif;
+    --font-secondary: "Open Sans", sans-serif;
+}
+
+.float-banner {
+    position: fixed;
+    margin-top: 80px;
+    margin-bottom: 1px;
+    right: 0%;
+    z-index: 4;
+    width: 60px;
+}
+
+.float-banner > a > img {
+    width: 62px;
+    /* height: 70px; */
+    /* margin-left: 40%; */
+    padding: 5px;
+}
+
+@media (min-width: 640px){
+    .hero .carousel-control-prev {
+        padding-left: 50px;
+    }
+}
+
+@media (min-width: 640px){
+    .hero .carousel-control-next {
+        padding-right: 50px;
+    }
+}
+
+.carousel-control-prev {
+    left: 50px;
+    top: -50px;
+}
+
+.carousel-control-next {
+    right: 50px;
+    top: -50px;
+}
+
+.section-header {
+    text-align: center;
+    padding-bottom: 10px !important;
+}
+
+.alt-services h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-default);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.hero .info h2 {
+    margin-top: 150px !important;
+    font-size: 30px !important;
+    opacity: 0.8 !important;
+}
+
+.hero .info p {
+    font-size: 35px !important;
+    opacity: 0.8 !important;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+.w-15 {
+    width: 15% !important;
+    opacity: 0.3 !important;
+}
+
+.team .member .member-img {
+    border-radius: 1% !important;
+}
+
+.fs-larger {
+    font-size: larger !important;
+}
+
+.fw-bold{
+    font-weight: bold !important;
+}
+
+.readmore > a {
+    color: var(--color-default)
+}
+
+a:hover {
+    color: var(--color-primary) !important;
+}
+
+.scroll-top:hover {
+    background: var(--color-primary) !important;
+}
+
+.testimonials .testimonial-item {
+    margin: 0 158px 30px 0 !important;
+    min-height: 103px !important;
+}
+
+.disable-link {
+    pointer-events: none !important;
+}
+
+.breadcrumbs h3 {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--color-primary) !important;
+    font-family: var(--font-secondary);
+}
+
+@font-face {
+    font-family: 'Kirvy-Regular';
+    src: url("../fonts/Kirvy-Regular.otf");
+}
+
+@font-face {
+    font-family: 'Kirvy-Bold';
+    src: url("../fonts/Kirvy-Bold.otf");
+}
+
+@font-face {
+    font-family: 'Kirvy-Light';
+    src: url("../fonts/Kirvy-Light.otf");
+}
+
+@font-face {
+    font-family: 'Kirvy-Thin';
+    src: url("../fonts/Kirvy-Thin.otf");
+}
+
+.header {
+    position: fixed !important;
+    padding: 10px 0 !important;
+    background-color: var(--color-default) !important;
+}
+
+.contact .info-item h3 {
+    padding: 0px 2px 0px 2px !important;
+    font-size: 18px !important;
+}
+
+.contact .info-item p {
+    padding: 2px !important;
+}
+
+.float-sign-button {
+    margin: 0;
+    position: fixed;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    bottom: 10px;
+    z-index: 999;
+    opacity: 0.9;
+
+    background: var(--color-default);
+    color: white;
+    border: 1px solid var(--color-default);
+    border-radius: 70px;
+    box-shadow: 0 0 0 0 rgba(88, 60, 149, 0.5);
+    font-size: 25px;
+    display: inline-block;
+    text-align: center;
+    width: 500px;
+    height: 60px;
+    line-height: 55px;
+    text-decoration: none;
+    transition: background, padding 500ms ease-in-out;
+
+    animation: alert 1.5s infinite;
+}
+
+@keyframes alert {
+    0% {
+        transform: scale();
+    }
+    70% {
+        transform: scale();
+        box-shadow: 0 0 0 50px rgba(69, 152, 27, 0);
+    }
+    100% {
+        transform: scale();
+        box-shadow: 0 0 0 0 rgba(69, 152, 27, 0);
+    }
+}

@@ -14,8 +14,8 @@
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-pen color-orange flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="0"
-                                class="purecounter">521</span>
+                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="4"
+                                class="purecounter"></span>
                             <p>Assinaturas</p>
                         </div>
                     </div>
@@ -24,8 +24,8 @@
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-people-fill color-orange flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="0"
-                                class="purecounter">200</span>
+                            <span data-purecounter-start="200" data-purecounter-end="521" data-purecounter-duration="3"
+                                class="purecounter"></span>
                             <p>Assinatura de pessoas</p>
                         </div>
                     </div>
@@ -34,8 +34,8 @@
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-buildings color-orange flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="0"
-                                class="purecounter">321</span>
+                            <span data-purecounter-start="300" data-purecounter-end="521" data-purecounter-duration="3"
+                                class="purecounter"></span>
                             <p>Assinatura de empresas</p>
                         </div>
                     </div>
@@ -44,8 +44,8 @@
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-eye color-blue flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="0"
-                                class="purecounter">200</span>
+                            <span data-purecounter-start="{{ ($ruling->views / 100) * 50 }}" data-purecounter-end="{{ $ruling->views }}" data-purecounter-duration="3"
+                                class="purecounter"></span>
                             <p>Visualizações</p>
                         </div>
                     </div>

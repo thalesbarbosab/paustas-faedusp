@@ -29,6 +29,7 @@ class WebController extends Controller
     public function rulingDetail($slug)
     {
         $ruling = $this->ruling_service->findBySlug($slug);
+        $this->ruling_service->countViews($ruling->id);
         if(count($ruling->pictures)){
             $ruling->pictures = $this->ruling_picture_service->format($ruling->pictures);
         }

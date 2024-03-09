@@ -23,6 +23,7 @@ return [
         App\Interfaces\Database\Content\ContentInterface::class => App\Repositories\Eloquent\Content\ContentEloquentRepository::class,
         App\Interfaces\Database\Ruling\RulingInterface::class => App\Repositories\Eloquent\Ruling\RulingEloquentRepository::class,
         App\Interfaces\Database\Ruling\RulingPictureInterface::class => App\Repositories\Eloquent\Ruling\RulingPictureEloquentRepository::class,
+        App\Interfaces\Database\Ruling\RulingVotingInterface::class => App\Repositories\Eloquent\Ruling\RulingVotingEloquentRepository::class,
         // Services
     ]
 ];

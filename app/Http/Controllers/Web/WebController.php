@@ -4,16 +4,19 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Content\ContentContactSendMessageRequest;
+use App\Http\Requests\Ruling\RulingVotingStoreRequest;
 use App\Services\Content\ContentService;
 use App\Services\Ruling\RulingService;
 use App\Services\Ruling\RulingPictureService;
+use App\Services\Ruling\RulingVotingService;
 
 class WebController extends Controller
 {
     public function __construct(
         protected readonly ContentService $content_service,
         protected readonly RulingService $ruling_service,
-        protected readonly RulingPictureService $ruling_picture_service
+        protected readonly RulingPictureService $ruling_picture_service,
+        protected readonly RulingVotingService $ruling_voting_service,
     ){}
 
     public function index()
@@ -40,6 +43,12 @@ class WebController extends Controller
             $post = $this->ruling_picture_service->getDefaultCover($post);
         }
         return view("web.ruling-details",['ruling'=>$ruling,'ruling_recents'=>$ruling_recents]);
+    }
+
+    public function storeVoting(RulingVotingStoreRequest $request)
+    {
+        $this->ruling_voting_service->create($request->all());
+        return back()->with('success',true);
     }
 
     public function contact()

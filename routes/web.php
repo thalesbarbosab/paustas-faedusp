@@ -18,3 +18,4 @@ Route::get('/', [WebController::class, 'index'])->name('index');
 Route::get('/contato', [WebController::class, 'contact'])->name('contact');
 Route::post('/contato', [WebController::class, 'storeContact'])->name('contact.store');
 Route::get('/pauta/{slug}', [WebController::class, 'rulingDetail'])->name('ruling.detail');
+Route::post('/pauta/{ruling_id}/assinar', [WebController::class, 'storeVoting'])->name('ruling.voting.store');

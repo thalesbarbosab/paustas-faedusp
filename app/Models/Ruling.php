@@ -12,11 +12,16 @@ class Ruling extends Model
 
     protected $with = ['pictures'];
 
-    protected $withCount = ['pictures'];
+    protected $withCount = ['pictures','rulingVoting'];
 
     public function pictures()
     {
         return $this->hasMany(RulingPicture::class)->orderBy('is_default','desc');
+    }
+
+    public function rulingVoting()
+    {
+        return $this->hasMany(RulingVoting::class)->orderBy('created_at','desc');
     }
 
     public function publishDateFormated(): ?string

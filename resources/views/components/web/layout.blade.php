@@ -99,6 +99,8 @@
     <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
     {{-- <script src="/assets/vendor/php-email-form/validate.js"></script> --}}
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquerymask/1.14.16/jquery.mask.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>

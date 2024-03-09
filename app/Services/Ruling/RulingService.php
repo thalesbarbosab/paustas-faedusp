@@ -11,9 +11,6 @@ use App\Interfaces\Database\Ruling\RulingInterface;
 
 class RulingService
 {
-    protected const default_local_files = 'public/ruling/';
-    protected const valid_default_local_files = '/storage/ruling/';
-
     public function __construct(
         protected readonly RulingInterface $ruling_repository,
     ){}

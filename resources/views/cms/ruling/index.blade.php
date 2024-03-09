@@ -25,6 +25,7 @@
                                     <th>Título</th>
                                     <th>Data de publicação</th>
                                     <th>Data de expiração</th>
+                                    <th>Qtd de assinaturas</th>
                                     <th>Fotos</th>
                                 </tr>
                             </thead>
@@ -55,6 +56,7 @@
                                         <td>{{ Str::limit($item->title ,50, '...') }}</td>
                                         <td>{{ $item->publishDateFormated() }}</td>
                                         <td>{{ $item->expirationDateFormated() }}</td>
+                                        <td>{{ $item->ruling_voting_count }}</td>
                                         <td>{{ $item->pictures_count }}</td>
                                     </tr>
                                 @endforeach

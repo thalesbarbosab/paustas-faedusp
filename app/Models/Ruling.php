@@ -10,7 +10,7 @@ class Ruling extends Model
 {
     protected $fillable = ['slug','title','resume','description','publish_date','expiration_date','views','author'];
 
-    protected $with = ['pictures'];
+    protected $with = ['pictures','rulingVoting'];
 
     protected $withCount = ['pictures','rulingVoting'];
 
@@ -42,6 +42,15 @@ class Ruling extends Model
         $expiration_date = new DateTime($this->expiration_date);
 
         return $expiration_date->format('d/m/Y');
+    }
+
+    public function isExpirated(): bool
+    {
+        if(!$this->expiration_date){
+            return false;
+        }
+
+        return now() >= $this->expiration_date;
     }
 
 

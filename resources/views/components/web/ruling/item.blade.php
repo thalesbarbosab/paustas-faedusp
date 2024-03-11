@@ -11,7 +11,9 @@
             </div>
         @endif
         <p>{{ $ruling->resume }}</p>
-        <small style="color: red;"> Expiração em: {{ $ruling->expirationDateFormated() }}</small>
+        @if ($ruling->isExpirated())
+            <small style="color: red;"> Expirado em: {{ $ruling->expirationDateFormated() }}</small>
+        @endif
         <hr>
         <a href="{{ route('web.ruling.detail',$ruling->slug) }}" class="readmore stretched-link">
             <i class="bi bi-arrow-up-right-square"></i>&nbsp;

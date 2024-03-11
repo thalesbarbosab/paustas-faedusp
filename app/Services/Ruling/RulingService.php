@@ -72,14 +72,6 @@ class RulingService
         return $ruling;
     }
 
-    public function formatToValidUrl(Ruling $ruling)
-    {
-        if(isset($ruling->image)){
-            $ruling->formated_image = asset(self::valid_default_local_files.$ruling->image);
-        }
-        return $ruling;
-    }
-
     public function countViews($id): void
     {
         $this->ruling_repository->countMoreOneView($id);

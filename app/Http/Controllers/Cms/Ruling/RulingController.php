@@ -10,11 +10,14 @@ use App\Http\Requests\Ruling\RulingStoreUpdateRequest;
 use App\Services\Ruling\RulingService;
 use App\Services\Ruling\RulingPictureService;
 
+use App\Reports\Ruling\RulingReport;
+
 class RulingController extends Controller
 {
     public function __construct(
         protected readonly RulingService $ruling_service,
-        protected readonly RulingPictureService $ruling_picture_service
+        protected readonly RulingPictureService $ruling_picture_service,
+        protected readonly RulingReport $ruling_report
     ){}
 
     /**
@@ -107,6 +110,27 @@ class RulingController extends Controller
                 'alert-type' => 'success'
             );
             return back()->with($notification);
+        }
+        catch (Exception $e) {
+            $notification = $this->proccessError($e);
+            return back()->with($notification)->withInput();
+        }
+    }
+
+    /**
+     * Report for the only one ruling
+     */
+    public function rulingVotingReport(string $id)
+    {
+        try{
+            $ruling = $this->ruling_service->find($id);
+            if ($ruling->ruling_voting_count == 0) {
+                throw new Exception(code: 404);
+            }
+            $report = $this->ruling_report->voting($ruling);
+
+            return back()->with($report);
+
         }
         catch (Exception $e) {
             $notification = $this->proccessError($e);

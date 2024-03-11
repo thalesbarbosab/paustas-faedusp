@@ -152,6 +152,10 @@ return [
     ],
 
     'generic' => [
+        'Success' => 'Sucesso',
+        'Warning' => 'Atenção',
+        'Error' => 'Erro',
+
         'verify_data'           => 'verifique os dados informados',
         'ops'                   => 'Ops!',
         'created'               => 'dados inseridos com sucesso.',
@@ -213,6 +217,12 @@ return [
             'november'        =>    "novembro",
             'december'        =>    "dezembro"
         ],
+    ],
+
+    'report' => [
+        'empty' => 'não existem dados para geração do relatório!',
+        'success' => 'relatório gerado com sucesso!',
+        'error' => 'não foi possível gerar o relatório neste momento.',
     ],
     /*
     |--------------------------------------------------------------------------

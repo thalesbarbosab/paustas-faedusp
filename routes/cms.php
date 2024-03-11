@@ -86,6 +86,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}/editar', [RulingController::class,'edit'])->name('edit');
         Route::put('/{id}', [RulingController::class,'update'])->name('update');
         Route::delete('/{id}', [RulingController::class,'destroy'])->name('destroy');
+        Route::get('/{id}/relatorio-de-assinaturas-pela-pauta', [RulingController::class,'rulingVotingReport'])->name('report_by_ruling');
         Route::name('picture.')->group(function(){
             Route::get('/{ruling_id}/fotos', [RulingPictureController::class,'index'])->name('index');
             Route::get('/{ruling_id}/fotos/nova', [RulingPictureController::class,'create'])->name('create');

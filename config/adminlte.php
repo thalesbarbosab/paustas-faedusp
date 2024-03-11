@@ -387,6 +387,16 @@ return [
     */
 
     'plugins' => [
+        'CustomStyle' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '/assets/css/custom-cms.css?v='.time(),
+                ],
+            ],
+        ],
         'Sumernote' => [
             'active' => true,
             'files' => [

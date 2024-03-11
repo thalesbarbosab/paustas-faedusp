@@ -1,0 +1,20 @@
+:root {
+    --custom-primary: #415eb0;
+    --custom-primary-2: #5762ba;
+}
+
+.spinner {
+    margin-left: 35%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#0000 10%, var(--custom-primary));
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 15px), #000 0);
+    animation: spinner-zp9dbg 0.9s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+    to {
+        transform: rotate(1turn);
+    }
+}

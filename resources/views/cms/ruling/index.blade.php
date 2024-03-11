@@ -26,7 +26,8 @@
                                     <th>Data de publicação</th>
                                     <th>Data de expiração</th>
                                     <th>Qtd de assinaturas</th>
-                                    <th>Fotos</th>
+                                    <th>Qtd de visualizações</th>
+                                    <th>Qtd de Fotos</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,6 +51,9 @@
                                                         @method('DELETE')
                                                         <button class="dropdown-item"><i class="fas fa-trash-alt"></i> Remover</button>
                                                     </form>
+                                                    <a class="dropdown-item" href="{{ route('cms.ruling.report_by_ruling', $item->id)}}">
+                                                        <i class="far fa-file-excel"></i> Relatório das assinaturas
+                                                    </a>
                                                 </div>
                                             </div>
                                         </td>
@@ -57,6 +61,7 @@
                                         <td>{{ $item->publishDateFormated() }}</td>
                                         <td>{{ $item->expirationDateFormated() }}</td>
                                         <td>{{ $item->ruling_voting_count }}</td>
+                                        <td>{{ $item->views }}</td>
                                         <td>{{ $item->pictures_count }}</td>
                                     </tr>
                                 @endforeach
@@ -79,4 +84,5 @@
             </div>
         </div>
     </div>
+    @component('components.cms.report')@endcomponent
 @endsection

@@ -4,9 +4,12 @@ namespace App\Http\Requests\Ruling;
 
 use App\Rules\RightCpf;
 use App\Rules\RightCnpj;
+
 use App\Helpers\Sanitize;
 use App\Rules\RightEmail;
 use App\Rules\GoogleRecaptcha;
+use Illuminate\Validation\Rule;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RulingVotingStoreRequest extends FormRequest
@@ -30,13 +33,23 @@ class RulingVotingStoreRequest extends FormRequest
     {
         return [
             'ruling_id' => 'required|exists:rulings,id',
-            'cpf' => ['required', "unique:ruling_votings,cpf,{$this->id}", 'digits:11', 'numeric', new RightCpf],
+            'cpf' => ['required',
+                      Rule::unique('ruling_votings')->where(fn (Builder $query) => $query->where('ruling_id', $this->ruling_id)),
+                      'digits:11',
+                      'numeric',
+                      new RightCpf
+            ],
             'name' => 'required|string|max:200',
             'city' => 'required|string|max:100',
             'state' => 'required|string|max:2',
-            'email' => ['required', "unique:ruling_votings,email,{$this->id}", 'email', 'required_if:customer_status_id,2', new RightEmail],
+            'email' => ['required', 'required_if:customer_status_id,2', new RightEmail],
             'company_name' => 'nullable|string|max:200|required_with:cnpj',
-            'cnpj' => ['nullable', "unique:ruling_votings,cnpj,{$this->id}", 'digits:14', 'numeric', new RightCnpj],
+            'cnpj' => ['nullable',
+                        Rule::unique('ruling_votings')->where(fn (Builder $query) => $query->where('ruling_id', $this->ruling_id)),
+                       'digits:14',
+                       'numeric',
+                       new RightCnpj
+            ],
             'g-recaptcha-response'      =>  ['required', new GoogleRecaptcha],
         ];
     }

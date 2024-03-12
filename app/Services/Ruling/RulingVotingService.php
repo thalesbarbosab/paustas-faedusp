@@ -16,4 +16,8 @@ class RulingVotingService
         return $this->ruling_voting_interface->create($ruling_voting_array);
     }
 
+    public function deleteByRuling($ruling_id)
+    {
+        return $this->ruling_voting_interface->deleteByRuling($ruling_id);
+    }
 }

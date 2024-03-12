@@ -11,12 +11,14 @@ use App\Services\Ruling\RulingService;
 use App\Services\Ruling\RulingPictureService;
 
 use App\Reports\Ruling\RulingReport;
+use App\Services\Ruling\RulingVotingService;
 
 class RulingController extends Controller
 {
     public function __construct(
         protected readonly RulingService $ruling_service,
         protected readonly RulingPictureService $ruling_picture_service,
+        protected readonly RulingVotingService $ruling_voting_service,
         protected readonly RulingReport $ruling_report
     ){}
 
@@ -103,6 +105,7 @@ class RulingController extends Controller
     public function destroy(string $id)
     {
         try{
+            $this->ruling_voting_service->deleteByRuling($id);
             $this->ruling_picture_service->deleteByRulingId($id);
             $this->ruling_service->delete($id);
             $notification = array(

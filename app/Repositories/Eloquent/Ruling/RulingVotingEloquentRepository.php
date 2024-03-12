@@ -11,4 +11,9 @@ class RulingVotingEloquentRepository implements RulingVotingInterface
     {
         return RulingVoting::create($ruling_voting_array);
     }
+
+    public function deleteByRuling($ruling_id): bool
+    {
+        return RulingVoting::whereRulingId($ruling_id)->delete();
+    }
 }
